@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MonitoraR</string>
+    <string name="textButton">Entrar</string>
+    <string name="cadastro">Cadastrar</string>
+    <string name="esqueci_senha">Esqueceu a senha?</string>
+    <string name="txtCadastro">Cadastro</string>
+    <string name="Voltar">Voltar para o Login</string>
+</resources>
