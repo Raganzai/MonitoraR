@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "156215891387",
+    "project_id": "monitorar-c15d5",
+    "storage_bucket": "monitorar-c15d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156215891387:android:994f769f00a58d48f8609e",
+        "android_client_info": {
+          "package_name": "com.example.monitorar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156215891387-fgq312n7eolhomo5ov495vrrabnghim6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlek346QWTwOZMX0J15F-sNWpT_Kvlk9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156215891387-fgq312n7eolhomo5ov495vrrabnghim6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,10 +6,16 @@
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/background.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/button.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/div_parent.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/progress_bar.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/drawable/text_field.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/activity_cadastro.xml" value="0.22" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/activity_dados.xml" value="0.1" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/activity_dados_cartilha.xml" value="0.1" />
         <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/layout/fragment_preenchimento.xml" value="0.25" />
+        <entry key="..\:/Users/ragan/AndroidStudioProjects/MonitoraR/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2" />
       </map>
     </option>
   </component>

@@ -1,5 +1,7 @@
 package com.example.monitorar;
 
+import static android.os.SystemClock.sleep;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +18,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -23,13 +29,13 @@ public class Cadastro extends AppCompatActivity {
     private Button btnCadastrar;
     private EditText txtNome, txtEmail, txtSenha, txtCEP;
     String erro = "Todos os campos devem ser preenchidos.";
-    String sucesso = "O cadastro foi efetuado.";
+    String tamanho_CEP = "O CEP deve ter 8 dígitos.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        getSupportActionBar().hide();
+
         Inicializar();
 
         voltar.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +57,10 @@ public class Cadastro extends AppCompatActivity {
                     Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
+                } else if(cep.length()<8){
+                    Snackbar snackbar = Snackbar.make(view, tamanho_CEP, Snackbar.LENGTH_SHORT);
+                    snackbar.setTextColor(Color.WHITE);
+                    snackbar.show();
                 } else{
                     Cadastrar(view);
                 }
@@ -67,7 +77,24 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Snackbar snackbar = Snackbar.make(view, sucesso, Snackbar.LENGTH_SHORT);
+                    Intent intent = new Intent(Cadastro.this,Login.class);
+                    startActivity(intent);
+
+                } else{
+                    String mensagem;
+                    try {
+                        throw task.getException();
+
+                    }catch(FirebaseAuthWeakPasswordException e){
+                        mensagem = "A senha deve ter o mínimo de 6 caracteres.";
+                    }catch(FirebaseAuthUserCollisionException e){
+                        mensagem = "Este usuário já está cadastrado.";
+                    } catch(FirebaseAuthInvalidCredentialsException e){
+                        mensagem = "E-mail inválido.";
+                    } catch (Exception e){
+                        mensagem = "Ocorreu um erro inesperado durante o cadastro.";
+                    }
+                    Snackbar snackbar = Snackbar.make(view, mensagem, Snackbar.LENGTH_SHORT);
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }

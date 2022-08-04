@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/menu_apresentacao">
+    <fragment
+        android:id="@+id/menu_preenchimento"
+        android:name="com.example.monitorar.fragments.PreenchimentoFragment"
+        android:label="fragment_preenchimento"
+        tools:layout="@layout/fragment_preenchimento" />
+    <fragment
+        android:id="@+id/menu_user"
+        android:name="com.example.monitorar.fragments.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/menu_apresentacao"
+        android:name="com.example.monitorar.fragments.ApresentationFragment"
+        android:label="fragment_apresentation"
+        tools:layout="@layout/fragment_apresentation" />
+</navigation>

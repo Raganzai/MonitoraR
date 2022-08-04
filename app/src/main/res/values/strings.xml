@@ -5,4 +5,14 @@
     <string name="esqueci_senha">Esqueceu a senha?</string>
     <string name="txtCadastro">Cadastro</string>
     <string name="Voltar">Voltar para o Login</string>
+    <string name="Conta">Conta</string>
+    <string name="Sair">Sair</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Contribuicoes">Contribuições</string>
+    <string name="menu_apresentacao">Apresentação</string>
+    <string name="menu_preenchimento">Preenchimento</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="texto">    O protocolo é formulado atribuindo pontuações de acordo com a condição do parâmetro analisado. Com base no estudo de Pedroso e Colesanti (2017) a pontuação foi definida em 0, 2 ou 4, sendo: 0 indica uma condição ruim, 2 condição intermediária e 4 uma boa condição.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
