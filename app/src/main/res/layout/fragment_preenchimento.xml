@@ -23,46 +23,55 @@ tools:context=".fragments.PreenchimentoFragment">
         android:background="#40519DBC">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtLatitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Latitude" />
+            android:hint="Latitude"
+            android:maxLength="11"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/txtLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Longitude"
-            android:layout_marginBottom="30px"/>
+            android:layout_marginBottom="30px"
+            android:maxLength="11"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tipo de ocupação das margens do corpo d'água"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            />
 
-        <RadioButton
-            android:id="@+id/checkBox"
+        <RadioGroup
+            android:id="@+id/rgGrupo1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vegetação Natural" />
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vegetação Natural" />
 
-        <RadioButton
-            android:id="@+id/checkBox2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Campo de pastagem/ Agricultura/ Monocultura/ Reflorestamento" />
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Campo de pastagem/ Agricultura/ Monocultura/ Reflorestamento" />
 
-        <RadioButton
-            android:id="@+id/checkBox5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Residencial/ Comercial/ Industrial" />
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Residencial/ Comercial/ Industrial" />
+
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView2"
@@ -71,23 +80,28 @@ tools:context=".fragments.PreenchimentoFragment">
             android:text="Erosão próxima e/ou nas margens do rio e assoreamento em seu leito"
             android:textSize="25dp"/>
 
-        <RadioButton
-            android:id="@+id/checkBox6"
+        <RadioGroup
+            android:id="@+id/rgGrupo2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ausente" />
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
 
-        <RadioButton
-            android:id="@+id/checkBox7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Moderada" />
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moderada" />
 
-        <RadioButton
-            android:id="@+id/checkBox9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Acentuada" />
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acentuada" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView3"
@@ -96,23 +110,28 @@ tools:context=".fragments.PreenchimentoFragment">
             android:text="Alterações antrópicas"
             android:textSize="25dp" />
 
-        <RadioButton
-            android:id="@+id/checkBox10"
+        <RadioGroup
+            android:id="@+id/rgGrupo3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ausente" />
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
 
-        <RadioButton
-            android:id="@+id/checkBox11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Doméstica" />
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doméstica" />
 
-        <RadioButton
-            android:id="@+id/checkBox12"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Industrial/ Urbana" />
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Industrial/ Urbana" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/enviar"
@@ -120,7 +139,7 @@ tools:context=".fragments.PreenchimentoFragment">
             android:layout_height="wrap_content"
             android:layout_marginTop="1px"
             android:text="Enviar"
-            android:textColor="#4062FF"
+            android:textColor="#97519DBC"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
