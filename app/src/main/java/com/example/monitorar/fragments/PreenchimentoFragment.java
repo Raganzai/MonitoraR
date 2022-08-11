@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import com.example.monitorar.R;
 import androidx.annotation.NonNull;
@@ -35,21 +36,10 @@ public class PreenchimentoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Integer contador;
     TextView enviar;
     EditText txtLatitude;
     EditText txtLongitude;
-    RadioGroup rgGrupo1;
-    RadioGroup rgGrupo2;
-    RadioGroup rgGrupo3;
-    RadioButton radioButton1;
-    RadioButton radioButton2;
-    RadioButton radioButton3;
-    RadioButton radioButton4;
-    RadioButton radioButton5;
-    RadioButton radioButton6;
-    RadioButton radioButton7;
-    RadioButton radioButton8;
-    RadioButton radioButton9;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String erro = "Todos os campos devem ser preenchidos.";
     String tamanho = "Verifique se a latitude e a longitude foram preenchidos corretamente";
@@ -58,18 +48,9 @@ public class PreenchimentoFragment extends Fragment {
 
 
     public PreenchimentoFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PreenchimentoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static PreenchimentoFragment newInstance(String param1, String param2) {
         PreenchimentoFragment fragment = new PreenchimentoFragment();
         Bundle args = new Bundle();
@@ -94,18 +75,10 @@ public class PreenchimentoFragment extends Fragment {
         enviar = view.findViewById(R.id.enviar);
         txtLatitude = view.findViewById(R.id.txtLatitude);
         txtLongitude = view.findViewById(R.id.txtLongitude);
-        RadioButton radioButton1 = view.findViewById(R.id.radioButton1);
-        RadioButton radioButton2 = view.findViewById(R.id.radioButton2);
-        RadioButton radioButton3 = view.findViewById(R.id.radioButton3);
-        RadioButton radioButton4 = view.findViewById(R.id.radioButton4);
-        RadioButton radioButton5 = view.findViewById(R.id.radioButton5);
-        RadioButton radioButton6 = view.findViewById(R.id.radioButton6);
-        RadioButton radioButton7 = view.findViewById(R.id.radioButton7);
-        RadioButton radioButton8 = view.findViewById(R.id.radioButton8);
-        RadioButton radioButton9 = view.findViewById(R.id.radioButton9);
         RadioGroup rgGrupo1 = view.findViewById(R.id.rgGrupo1);
         RadioGroup rgGrupo2 = view.findViewById(R.id.rgGrupo2);
         RadioGroup rgGrupo3 = view.findViewById(R.id.rgGrupo3);
+        contador = 0;
 
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +88,12 @@ public class PreenchimentoFragment extends Fragment {
                 Integer grupo1 = rgGrupo1.getCheckedRadioButtonId();
                 Integer grupo2 = rgGrupo2.getCheckedRadioButtonId();
                 Integer grupo3 = rgGrupo3.getCheckedRadioButtonId();
+
+                String id1 = grupo1.toString();
+                String id2 = grupo2.toString();
+                String id3 = grupo3.toString();
+
+                String id = id1 + " " + id2 + " " + id3;
 
 
                 if (latitude.isEmpty() || longitude.isEmpty() || grupo1 == -1 || grupo2 == -1 || grupo3 == -1) {
@@ -126,22 +105,55 @@ public class PreenchimentoFragment extends Fragment {
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 } else {
+                    RadioButton radioButton1 = rgGrupo1.findViewById(R.id.radioButton1);
+                    RadioButton radioButton2 = rgGrupo1.findViewById(R.id.radioButton2);
+                    RadioButton radioButton3 = rgGrupo1.findViewById(R.id.radioButton3);
+                    RadioButton radioButton4 = rgGrupo2.findViewById(R.id.radioButton4);
+                    RadioButton radioButton5 = rgGrupo2.findViewById(R.id.radioButton5);
+                    RadioButton radioButton6 = rgGrupo2.findViewById(R.id.radioButton6);
+                    RadioButton radioButton7 = rgGrupo3.findViewById(R.id.radioButton7);
+                    RadioButton radioButton8 = rgGrupo3.findViewById(R.id.radioButton8);
+                    RadioButton radioButton9 = rgGrupo3.findViewById(R.id.radioButton9);
+
+                    Integer contador = 0;
+
+                    if (radioButton1.isChecked() == true){
+                        contador = contador + 4;
+                    } else if (radioButton2.isChecked() == true){
+                        contador = contador + 2;
+                    }
+
+                    if (radioButton4.isChecked() == true){
+                        contador = contador + 4;
+                    } else if (radioButton5.isChecked() == true){
+                        contador = contador + 2;
+                    }
+
+                    if (radioButton7.isChecked() == true){
+                        contador = contador + 4;
+                    } else if (radioButton8.isChecked() == true){
+                        contador = contador + 2;
+                    }
+
+
+                    String resultado = contador.toString();
+
+                    Snackbar snackbar = Snackbar.make(view, resultado, Snackbar.LENGTH_LONG);
+                    snackbar.setTextColor(Color.WHITE);
+                    snackbar.show();
+
                     txtLatitude.setText("");
                     txtLongitude.setText("");
-                    radioButton1.setChecked(false);
-                    radioButton2.setChecked(false);
-                    radioButton3.setChecked(false);
-                    radioButton4.setChecked(false);
-                    radioButton5.setChecked(false);
-                    radioButton6.setChecked(false);
-                    radioButton7.setChecked(false);
-                    radioButton8.setChecked(false);
-                    radioButton9.setChecked(false);
+                    rgGrupo1.clearCheck();
+                    rgGrupo2.clearCheck();
+                    rgGrupo3.clearCheck();
 
                     //Codigo teste (precisa ser trabalhado) - ineficiente
                 }
+
             }
         });
+
         return view;
     }
 }
