@@ -8,12 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
@@ -22,6 +25,11 @@ import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -30,6 +38,7 @@ public class Cadastro extends AppCompatActivity {
     private EditText txtNome, txtEmail, txtSenha, txtCEP;
     String erro = "Todos os campos devem ser preenchidos.";
     String tamanho_CEP = "O CEP deve ter 8 dígitos.";
+    String usuariosID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +81,8 @@ public class Cadastro extends AppCompatActivity {
 
         String email = txtEmail.getText().toString();
         String senha = txtSenha.getText().toString();
+        String nome = txtNome.getText().toString();
+        String cep = txtCEP.getText().toString();
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -98,6 +109,26 @@ public class Cadastro extends AppCompatActivity {
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }
+            }
+        });
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String, Object> usuarios = new HashMap<>();
+        usuarios.put("nome", nome);
+        usuarios.put("cep", cep);
+        usuariosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference documentReference = db.collection("usuarios").document(usuariosID);
+        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d("db","Usuario salvo com sucesso");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("db","Erro ao salvar usuario" + e.toString());
             }
         });
     }

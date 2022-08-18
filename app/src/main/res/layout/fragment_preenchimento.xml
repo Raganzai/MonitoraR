@@ -134,6 +134,316 @@ tools:context=".fragments.PreenchimentoFragment">
         </RadioGroup>
 
         <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cobertura vegetal no leito"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parcial" />
+
+            <RadioButton
+                android:id="@+id/radioButton11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total" />
+
+            <RadioButton
+                android:id="@+id/radioButton12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presença de mata ciliar"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ótima" />
+
+            <RadioButton
+                android:id="@+id/radioButton14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Boa" />
+
+            <RadioButton
+                android:id="@+id/radioButton15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ruim" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Extensão de mata ciliar"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Extenso" />
+
+            <RadioButton
+                android:id="@+id/radioButton17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Médio" />
+
+            <RadioButton
+                android:id="@+id/radioButton18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Curto" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odor da água"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
+
+            <RadioButton
+                android:id="@+id/radioButton20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esgoto (Ovo podre)" />
+
+            <RadioButton
+                android:id="@+id/radioButton21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Indústria" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oleosidade da água"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
+
+            <RadioButton
+                android:id="@+id/radioButton23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moderada" />
+
+            <RadioButton
+                android:id="@+id/radioButton24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abundante" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transparência da água"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transparente" />
+
+            <RadioButton
+                android:id="@+id/radioButton26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cor de chá" />
+
+            <RadioButton
+                android:id="@+id/radioButton27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opaca" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odor do sedimento"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
+
+            <RadioButton
+                android:id="@+id/radioButton29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esgoto (Ovo podre)" />
+
+            <RadioButton
+                android:id="@+id/radioButton30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Óleo/Indústria" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de fundo"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pedras/Cascalho" />
+
+            <RadioButton
+                android:id="@+id/radioButton32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lama/Areia" />
+
+            <RadioButton
+                android:id="@+id/radioButton33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cimento/Canalizado" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alterações no canal do rio"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ausente" />
+
+            <RadioButton
+                android:id="@+id/radioButton35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moderada" />
+
+            <RadioButton
+                android:id="@+id/radioButton36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acentuada modificação" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Características do fluxo das águas"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGrupo13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButton37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fluxo relativamente igual em toda a largura do rio" />
+
+            <RadioButton
+                android:id="@+id/radioButton38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Substrato exposto" />
+
+            <RadioButton
+                android:id="@+id/radioButton39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lâmina d'água escassa" />
+
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/enviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

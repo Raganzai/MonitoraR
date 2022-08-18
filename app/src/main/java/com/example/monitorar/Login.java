@@ -77,6 +77,8 @@ public class Login extends AppCompatActivity {
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                     ProgressBar.setVisibility(View.INVISIBLE);
+                    txtEmail.setText("");
+                    txtSenha.setText("");
         }}});}
 
     private void Inicializar(){
