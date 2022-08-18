@@ -157,81 +157,81 @@ public class PreenchimentoFragment extends Fragment {
 
                     //Verifica quais botoes estao selececionados e atribui a pontuacao
 
-                    if (radioButton1.isChecked() == true) {
+                    if (radioButton1.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton2.isChecked() == true) {
+                    } else if (radioButton2.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton4.isChecked() == true) {
+                    if (radioButton4.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton5.isChecked() == true) {
+                    } else if (radioButton5.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton7.isChecked() == true) {
+                    if (radioButton7.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton8.isChecked() == true) {
+                    } else if (radioButton8.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton10.isChecked() == true) {
+                    if (radioButton10.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton11.isChecked() == true) {
+                    } else if (radioButton11.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton13.isChecked() == true) {
+                    if (radioButton13.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton14.isChecked() == true) {
+                    } else if (radioButton14.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton16.isChecked() == true) {
+                    if (radioButton16.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton17.isChecked() == true) {
+                    } else if (radioButton17.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton19.isChecked() == true) {
+                    if (radioButton19.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton20.isChecked() == true) {
+                    } else if (radioButton20.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton22.isChecked() == true) {
+                    if (radioButton22.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton23.isChecked() == true) {
+                    } else if (radioButton23.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton25.isChecked() == true) {
+                    if (radioButton25.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton26.isChecked() == true) {
+                    } else if (radioButton26.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton28.isChecked() == true) {
+                    if (radioButton28.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton29.isChecked() == true) {
+                    } else if (radioButton29.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton31.isChecked() == true) {
+                    if (radioButton31.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton32.isChecked() == true) {
+                    } else if (radioButton32.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton34.isChecked() == true) {
+                    if (radioButton34.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton35.isChecked() == true) {
+                    } else if (radioButton35.isChecked()) {
                         contador = contador + 2;
                     }
 
-                    if (radioButton37.isChecked() == true) {
+                    if (radioButton37.isChecked()) {
                         contador = contador + 4;
-                    } else if (radioButton38.isChecked() == true) {
+                    } else if (radioButton38.isChecked()) {
                         contador = contador + 2;
                     }
 
