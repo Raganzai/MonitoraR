@@ -253,13 +253,16 @@ public class PreenchimentoFragment extends Fragment {
 
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+                    dadosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
                     Map<String, Object> dados = new HashMap<>();
                     dados.put("latitude", latitude);
                     dados.put("longitude", longitude);
                     dados.put("resultado", contador);
                     dados.put("situacao", situacao);
-
-                    dadosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    dados.put("email", email);
+                    dados.put("UID", dadosID);
 
                     DocumentReference documentReference = db.collection("dados").document(dadosID);
                     documentReference.set(dados).addOnSuccessListener(new OnSuccessListener<Void>() {
