@@ -30,6 +30,10 @@ import java.util.Map;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PreenchimentoFragment#newInstance} factory method to
@@ -52,6 +56,7 @@ public class PreenchimentoFragment extends Fragment {
     String error = "Todos os campos devem ser preenchidos.";
     String tamanho = "Verifique se a latitude e a longitude foram preenchidos corretamente";
     String dadosID;
+    String userID;
 
     public PreenchimentoFragment() {
 
@@ -253,7 +258,8 @@ public class PreenchimentoFragment extends Fragment {
 
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                    dadosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    dadosID = criarID();
+                    userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
                     Map<String, Object> dados = new HashMap<>();
@@ -262,7 +268,7 @@ public class PreenchimentoFragment extends Fragment {
                     dados.put("resultado", contador);
                     dados.put("situacao", situacao);
                     dados.put("email", email);
-                    dados.put("UID", dadosID);
+                    dados.put("UID", userID);
 
                     DocumentReference documentReference = db.collection("dados").document(dadosID);
                     documentReference.set(dados).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -307,5 +313,19 @@ public class PreenchimentoFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public String criarID() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+        LocalDateTime dataHoraAtual = LocalDateTime.now();
+        String dataHoraAtualFormatada = dtf.format(dataHoraAtual);
+
+        // Criando um número aleatório entre 10-99
+        Random random = new Random();
+        int numAleatorio = random.nextInt(100-10)+10;
+
+        String id = dataHoraAtualFormatada.toString() + Integer.toString(numAleatorio);
+
+        return id;
     }
 }
