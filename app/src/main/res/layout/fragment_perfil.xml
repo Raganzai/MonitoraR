@@ -6,9 +6,54 @@
     tools:context=".fragments.PerfilFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:background="#40519DBC">
+
+        <TextView
+            android:layout_width="432dp"
+            android:layout_height="202dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="189dp"
+            android:text="Título"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:textSize="20sp"
+            android:text="Email" />
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+                android:textSize="20sp"
+            android:layout_height="52dp"
+            android:text="Nome" />
+
+        <TextView
+            android:id="@+id/txtEnvios"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/sair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1px"
+            android:text="Sair"
+            android:textColor="#97519DBC"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </FrameLayout>

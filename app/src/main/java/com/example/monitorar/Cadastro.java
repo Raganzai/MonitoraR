@@ -88,6 +88,25 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                    Map<String, Object> usuarios = new HashMap<>();
+                    usuarios.put("nome", nome);
+                    usuarios.put("cep", cep);
+                    usuariosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                    DocumentReference documentReference = db.collection("usuarios").document(usuariosID);
+                    documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d("db","Usuario salvo com sucesso");
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("db","Erro ao salvar usuario" + e.toString());
+                        }
+                    });
                     Intent intent = new Intent(Cadastro.this,Login.class);
                     startActivity(intent);
 
@@ -112,25 +131,6 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Map<String, Object> usuarios = new HashMap<>();
-        usuarios.put("nome", nome);
-        usuarios.put("cep", cep);
-        usuariosID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-        DocumentReference documentReference = db.collection("usuarios").document(usuariosID);
-        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d("db","Usuario salvo com sucesso");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("db","Erro ao salvar usuario" + e.toString());
-            }
-        });
     }
 
     private void Inicializar(){

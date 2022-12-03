@@ -1,7 +1,9 @@
 package com.example.monitorar.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -102,6 +104,7 @@ public class PreenchimentoFragment extends Fragment {
         contador = 0;
 
         enviar.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 String latitude = txtLatitude.getText().toString();
@@ -259,7 +262,6 @@ public class PreenchimentoFragment extends Fragment {
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
                     dadosID = criarID();
-                    userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
                     Map<String, Object> dados = new HashMap<>();
@@ -268,7 +270,6 @@ public class PreenchimentoFragment extends Fragment {
                     dados.put("resultado", contador);
                     dados.put("situacao", situacao);
                     dados.put("email", email);
-                    dados.put("UID", userID);
 
                     DocumentReference documentReference = db.collection("dados").document(dadosID);
                     documentReference.set(dados).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -315,6 +316,7 @@ public class PreenchimentoFragment extends Fragment {
         return view;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public String criarID() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
         LocalDateTime dataHoraAtual = LocalDateTime.now();
@@ -324,7 +326,7 @@ public class PreenchimentoFragment extends Fragment {
         Random random = new Random();
         int numAleatorio = random.nextInt(100-10)+10;
 
-        String id = dataHoraAtualFormatada.toString() + Integer.toString(numAleatorio);
+        String id = dataHoraAtualFormatada + numAleatorio;
 
         return id;
     }

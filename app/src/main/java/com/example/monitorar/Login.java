@@ -89,5 +89,9 @@ public class Login extends AppCompatActivity {
         ProgressBar = findViewById(R.id.progress_bar);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 
 }
+
